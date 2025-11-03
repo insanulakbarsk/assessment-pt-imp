@@ -33,8 +33,8 @@ root/
 
 🧰 Installation & Setup
 1️⃣ Clone Repository
-git clone https://github.com/insanulakbarsk/assessment-imp
-cd assessment-imp
+git clone https://github.com/insanulakbarsk/assessment-pt-imp
+cd assessment-pt-imp
 
 🖥️ Backend (Laravel)
 📦 Requirements
