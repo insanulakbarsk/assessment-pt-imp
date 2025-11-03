@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 124, "column": 0}, "map": {"version":3,"sources":["file:///C:/laragon/www/assessment/nextjs/src/app/api/proxy/login/route.js"],"sourcesContent":["import axios from \"axios\";\r\n\r\nexport async function POST(req) {\r\n  const body = await req.json();\r\n\r\n  try {\r\n    const res = await axios.post(\"http://localhost:8000/api/login\", body, {\r\n      withCredentials: true, // kalau perlu\r\n    });\r\n    return new Response(JSON.stringify(res.data), { status: 200 });\r\n  } catch (err) {\r\n    return new Response(JSON.stringify({ message: \"Failed\" }), { status: 500 });\r\n  }\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe,KAAK,GAAG;IAC5B,MAAM,OAAO,MAAM,IAAI,IAAI;IAE3B,IAAI;QACF,MAAM,MAAM,MAAM,kJAAK,CAAC,IAAI,CAAC,mCAAmC,MAAM;YACpE,iBAAiB;QACnB;QACA,OAAO,IAAI,SAAS,KAAK,SAAS,CAAC,IAAI,IAAI,GAAG;YAAE,QAAQ;QAAI;IAC9D,EAAE,OAAO,KAAK;QACZ,OAAO,IAAI,SAAS,KAAK,SAAS,CAAC;YAAE,SAAS;QAAS,IAAI;YAAE,QAAQ;QAAI;IAC3E;AACF","debugId":null}}]
+}
