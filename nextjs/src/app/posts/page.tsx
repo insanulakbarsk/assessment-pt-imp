@@ -10,14 +10,16 @@ export default function PostsPage() {
   const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const [lastPage, setLastPage] = useState(1);
   const router = useRouter();
 
-  const fetchPosts = async () => {
+  const fetchPosts = async (pageNumber = 1) => {
     setLoading(true);
     try {
       const storedToken = localStorage.getItem("token");
       setToken(storedToken);
-      const res = await fetch("/api/proxy/posts", {
+      const res = await fetch(`/api/proxy/posts?page=${pageNumber}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${storedToken}`,
@@ -27,7 +29,10 @@ export default function PostsPage() {
       if (!res.ok) throw new Error("Gagal memuat postingan");
 
       const data = await res.json();
+      // Struktur Laravel pagination
       setPosts(Array.isArray(data.data) ? data.data : []);
+      setPage(data.current_page || 1);
+      setLastPage(data.last_page || 1);
     } catch (err: any) {
       toast.error(err.message);
       setPosts([]);
@@ -50,7 +55,7 @@ export default function PostsPage() {
       if (!res.ok) throw new Error("Gagal menghapus post");
 
       toast.success("Post berhasil dihapus!");
-      setPosts(posts.filter((post) => post.id !== id));
+      fetchPosts(page); // refresh data di halaman saat ini
     } catch (err: any) {
       toast.error("Terjadi kesalahan saat menghapus post");
     }
@@ -65,8 +70,8 @@ export default function PostsPage() {
   };
 
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    fetchPosts(page);
+  }, [page]);
 
   if (loading)
     return (
@@ -102,31 +107,30 @@ export default function PostsPage() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8 space-y-3 sm:space-y-0">
-            <div className="flex items-center gap-3">
-              <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
-                ✨ Daftar Postingan
-              </h1>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Link href="/posts/create" className="btn btn-primary">
-                + Buat Baru
-              </Link>
-
-              {token && (
-                <button
-                  onClick={handleLogout}
-                  className="btn btn-outline btn-error"
-                >
-                  Logout
-                </button>
-              )}
-            </div>
+          <div className="flex items-center gap-3">
+            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
+              ✨ Daftar Postingan
+            </h1>
           </div>
 
+          <div className="flex items-center gap-2">
+            <Link href="/posts/create" className="btn btn-primary">
+              + Buat Baru
+            </Link>
+
+            {token && (
+              <button
+                onClick={handleLogout}
+                className="btn btn-outline btn-error"
+              >
+                Logout
+              </button>
+            )}
+          </div>
+        </div>
 
         {/* Grid of cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {posts.map((post, i) => (
             <motion.div
               key={post.id}
@@ -169,6 +173,27 @@ export default function PostsPage() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="flex justify-center items-center gap-2 mt-8">
+          <button
+            className="btn btn-sm"
+            disabled={page === 1}
+            onClick={() => setPage(page - 1)}
+          >
+            « Prev
+          </button>
+          <span className="text-gray-600 dark:text-gray-300">
+            Halaman {page} dari {lastPage}
+          </span>
+          <button
+            className="btn btn-sm"
+            disabled={page === lastPage}
+            onClick={() => setPage(page + 1)}
+          >
+            Next »
+          </button>
         </div>
       </div>
     </div>

@@ -25,13 +25,15 @@ function PostsPage() {
     const [posts, setPosts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [token, setToken] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [page, setPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
+    const [lastPage, setLastPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    const fetchPosts = async ()=>{
+    const fetchPosts = async (pageNumber = 1)=>{
         setLoading(true);
         try {
             const storedToken = localStorage.getItem("token");
             setToken(storedToken);
-            const res = await fetch("/api/proxy/posts", {
+            const res = await fetch(`/api/proxy/posts?page=${pageNumber}`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${storedToken}`
@@ -39,7 +41,10 @@ function PostsPage() {
             });
             if (!res.ok) throw new Error("Gagal memuat postingan");
             const data = await res.json();
+            // Struktur Laravel pagination
             setPosts(Array.isArray(data.data) ? data.data : []);
+            setPage(data.current_page || 1);
+            setLastPage(data.last_page || 1);
         } catch (err) {
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].error(err.message);
             setPosts([]);
@@ -58,7 +63,7 @@ function PostsPage() {
             });
             if (!res_0.ok) throw new Error("Gagal menghapus post");
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].success("Post berhasil dihapus!");
-            setPosts(posts.filter((post)=>post.id !== id));
+            fetchPosts(page); // refresh data di halaman saat ini
         } catch (err_0) {
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].error("Terjadi kesalahan saat menghapus post");
         }
@@ -72,9 +77,11 @@ function PostsPage() {
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "PostsPage.useEffect": ()=>{
-            fetchPosts();
+            fetchPosts(page);
         }
-    }["PostsPage.useEffect"], []);
+    }["PostsPage.useEffect"], [
+        page
+    ]);
     if (loading) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex flex-col items-center justify-center h-screen",
         children: [
@@ -82,7 +89,7 @@ function PostsPage() {
                 className: "loading loading-spinner text-primary w-10 h-10"
             }, void 0, false, {
                 fileName: "[project]/src/app/posts/page.tsx",
-                lineNumber: 61,
+                lineNumber: 66,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -90,13 +97,13 @@ function PostsPage() {
                 children: "Memuat data..."
             }, void 0, false, {
                 fileName: "[project]/src/app/posts/page.tsx",
-                lineNumber: 62,
+                lineNumber: 67,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/posts/page.tsx",
-        lineNumber: 60,
+        lineNumber: 65,
         columnNumber: 23
     }, this);
     if (posts.length === 0) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -117,7 +124,7 @@ function PostsPage() {
                     children: "📄 Belum Ada Postingan"
                 }, void 0, false, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 72,
+                    lineNumber: 77,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -125,7 +132,7 @@ function PostsPage() {
                     children: "Mulailah membuat postingan pertama Anda."
                 }, void 0, false, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 75,
+                    lineNumber: 80,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -134,18 +141,18 @@ function PostsPage() {
                     children: "+ Buat Postingan"
                 }, void 0, false, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 78,
+                    lineNumber: 83,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/posts/page.tsx",
-            lineNumber: 65,
+            lineNumber: 70,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/posts/page.tsx",
-        lineNumber: 64,
+        lineNumber: 69,
         columnNumber: 34
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -163,13 +170,13 @@ function PostsPage() {
                                 children: "✨ Daftar Postingan"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/posts/page.tsx",
-                                lineNumber: 88,
-                                columnNumber: 15
+                                lineNumber: 93,
+                                columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 87,
-                            columnNumber: 13
+                            lineNumber: 92,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex items-center gap-2",
@@ -180,8 +187,8 @@ function PostsPage() {
                                     children: "+ Buat Baru"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/posts/page.tsx",
-                                    lineNumber: 94,
-                                    columnNumber: 15
+                                    lineNumber: 99,
+                                    columnNumber: 13
                                 }, this),
                                 token && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: handleLogout,
@@ -189,24 +196,24 @@ function PostsPage() {
                                     children: "Logout"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/posts/page.tsx",
-                                    lineNumber: 98,
-                                    columnNumber: 25
+                                    lineNumber: 103,
+                                    columnNumber: 23
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 93,
-                            columnNumber: 13
+                            lineNumber: 98,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 86,
+                    lineNumber: 91,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6",
-                    children: posts.map((post_0, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8",
+                    children: posts.map((post, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                             initial: {
                                 opacity: 0,
                                 y: 20
@@ -224,85 +231,127 @@ function PostsPage() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                         className: "card-title text-lg text-gray-800 dark:text-gray-100",
-                                        children: post_0.title
+                                        children: post.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/posts/page.tsx",
-                                        lineNumber: 117,
+                                        lineNumber: 121,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-gray-600 dark:text-gray-400 mt-1",
-                                        children: post_0.body?.length > 100 ? post_0.body.slice(0, 100) + "..." : post_0.body
+                                        children: post.body?.length > 100 ? post.body.slice(0, 100) + "..." : post.body
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/posts/page.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 124,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "card-actions justify-end mt-4",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: `/posts/${post_0.id}`,
+                                                href: `/posts/${post.id}`,
                                                 className: "btn btn-sm btn-outline",
                                                 children: "View"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/posts/page.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 128,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: `/posts/${post_0.id}/edit`,
+                                                href: `/posts/${post.id}/edit`,
                                                 className: "px-2 btn btn-sm btn-secondary",
                                                 children: "Edit"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/posts/page.tsx",
-                                                lineNumber: 127,
+                                                lineNumber: 131,
                                                 columnNumber: 19
                                             }, this),
                                             token && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>handleDelete(post_0.id),
+                                                onClick: ()=>handleDelete(post.id),
                                                 className: "px-2 btn btn-sm btn-error",
                                                 children: "Delete"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/posts/page.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 134,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/posts/page.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 127,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/posts/page.tsx",
-                                lineNumber: 116,
+                                lineNumber: 120,
                                 columnNumber: 15
                             }, this)
-                        }, post_0.id, false, {
+                        }, post.id, false, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 107,
-                            columnNumber: 37
+                            lineNumber: 111,
+                            columnNumber: 35
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 106,
+                    lineNumber: 110,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex justify-center items-center gap-2 mt-8",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            className: "btn btn-sm",
+                            disabled: page === 1,
+                            onClick: ()=>setPage(page - 1),
+                            children: "« Prev"
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/posts/page.tsx",
+                            lineNumber: 144,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "text-gray-600 dark:text-gray-300",
+                            children: [
+                                "Halaman ",
+                                page,
+                                " dari ",
+                                lastPage
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/posts/page.tsx",
+                            lineNumber: 147,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            className: "btn btn-sm",
+                            disabled: page === lastPage,
+                            onClick: ()=>setPage(page + 1),
+                            children: "Next »"
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/posts/page.tsx",
+                            lineNumber: 150,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/app/posts/page.tsx",
+                    lineNumber: 143,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/posts/page.tsx",
-            lineNumber: 84,
+            lineNumber: 89,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/posts/page.tsx",
-        lineNumber: 83,
+        lineNumber: 88,
         columnNumber: 10
     }, this);
 }
-_s(PostsPage, "JLHr4R3j3IHgOncS+UsG/8E0zOA=", false, function() {
+_s(PostsPage, "IGDUKQ+Lse04V+6iiUKS4KU/kAc=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
