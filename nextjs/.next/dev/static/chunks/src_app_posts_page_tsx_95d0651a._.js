@@ -12,9 +12,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-hot-toast/dist/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '@/components/Loading'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -82,28 +88,9 @@ function PostsPage() {
     }["PostsPage.useEffect"], [
         page
     ]);
-    if (loading) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex flex-col items-center justify-center h-screen",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "loading loading-spinner text-primary w-10 h-10"
-            }, void 0, false, {
-                fileName: "[project]/src/app/posts/page.tsx",
-                lineNumber: 66,
-                columnNumber: 9
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "mt-4 text-gray-500",
-                children: "Memuat data..."
-            }, void 0, false, {
-                fileName: "[project]/src/app/posts/page.tsx",
-                lineNumber: 67,
-                columnNumber: 9
-            }, this)
-        ]
-    }, void 0, true, {
+    if (loading) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Loading, {}, void 0, false, {
         fileName: "[project]/src/app/posts/page.tsx",
-        lineNumber: 65,
+        lineNumber: 66,
         columnNumber: 23
     }, this);
     if (posts.length === 0) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -124,7 +111,7 @@ function PostsPage() {
                     children: "📄 Belum Ada Postingan"
                 }, void 0, false, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 77,
+                    lineNumber: 75,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -132,7 +119,7 @@ function PostsPage() {
                     children: "Mulailah membuat postingan pertama Anda."
                 }, void 0, false, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 80,
+                    lineNumber: 78,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -141,18 +128,18 @@ function PostsPage() {
                     children: "+ Buat Postingan"
                 }, void 0, false, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 83,
+                    lineNumber: 81,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/posts/page.tsx",
-            lineNumber: 70,
+            lineNumber: 68,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/posts/page.tsx",
-        lineNumber: 69,
+        lineNumber: 67,
         columnNumber: 34
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -170,12 +157,12 @@ function PostsPage() {
                                 children: "✨ Daftar Postingan"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/posts/page.tsx",
-                                lineNumber: 93,
+                                lineNumber: 91,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 92,
+                            lineNumber: 90,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -187,7 +174,7 @@ function PostsPage() {
                                     children: "+ Buat Baru"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/posts/page.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 97,
                                     columnNumber: 13
                                 }, this),
                                 token && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -196,19 +183,19 @@ function PostsPage() {
                                     children: "Logout"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/posts/page.tsx",
-                                    lineNumber: 103,
+                                    lineNumber: 101,
                                     columnNumber: 23
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 98,
+                            lineNumber: 96,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 91,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -234,7 +221,7 @@ function PostsPage() {
                                         children: post.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/posts/page.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 119,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -242,7 +229,7 @@ function PostsPage() {
                                         children: post.body?.length > 100 ? post.body.slice(0, 100) + "..." : post.body
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/posts/page.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 122,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -254,7 +241,7 @@ function PostsPage() {
                                                 children: "View"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/posts/page.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 126,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -263,7 +250,7 @@ function PostsPage() {
                                                 children: "Edit"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/posts/page.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 129,
                                                 columnNumber: 19
                                             }, this),
                                             token && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -272,29 +259,29 @@ function PostsPage() {
                                                 children: "Delete"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/posts/page.tsx",
-                                                lineNumber: 134,
+                                                lineNumber: 132,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/posts/page.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 125,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/posts/page.tsx",
-                                lineNumber: 120,
+                                lineNumber: 118,
                                 columnNumber: 15
                             }, this)
                         }, post.id, false, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 111,
+                            lineNumber: 109,
                             columnNumber: 35
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 110,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -307,7 +294,7 @@ function PostsPage() {
                             children: "« Prev"
                         }, void 0, false, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 144,
+                            lineNumber: 142,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -320,7 +307,7 @@ function PostsPage() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 147,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -330,24 +317,24 @@ function PostsPage() {
                             children: "Next »"
                         }, void 0, false, {
                             fileName: "[project]/src/app/posts/page.tsx",
-                            lineNumber: 150,
+                            lineNumber: 148,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/posts/page.tsx",
-                    lineNumber: 143,
+                    lineNumber: 141,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/posts/page.tsx",
-            lineNumber: 89,
+            lineNumber: 87,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/posts/page.tsx",
-        lineNumber: 88,
+        lineNumber: 86,
         columnNumber: 10
     }, this);
 }

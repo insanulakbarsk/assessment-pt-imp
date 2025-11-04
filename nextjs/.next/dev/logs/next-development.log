@@ -1,5 +1,704 @@
-[00:00:03.359] Server  LOG      ✓ Ready in 2.4s
-[00:00:06.880] Server  LOG      ○ Compiling / ...
-[00:00:13.375] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:13.612] Browser WARN    Image with src "http://localhost:3000/next.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:02:26.782] Server  LOG      ✓ Compiled in 416ms
+[00:00:04.487] Server  LOG      ✓ Ready in 3.3s
+[00:01:33.123] Server  LOG      ○ Compiling / ...
+[00:01:47.582] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:47.836] Browser WARN    Image with src "http://localhost:3000/next.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:12.985] Server  LOG      ✓ Compiled in 427ms
+[00:05:11.484] Server  LOG      ✓ Compiled in 368ms
+[00:06:11.961] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:12.159] Browser WARN    Image with src "http://localhost:3000/next.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:56.554] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:56.863] Browser WARN    Image with src "http://localhost:3000/next.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:07:19.265] Server  LOG      ○ Compiling /posts ...
+[00:07:19.794] Server  ERROR    ⨯ ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:07:19.982] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:07:22.272] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:07:22.409] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:07:23.248] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:07:23.329] Server  ERROR    ⨯ ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:07:24.013] Browser ERROR   uncaughtError: Error: ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:07:24.272] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:07:24.399] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Module not found: Can't resolve '@/components/Loading'
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+Import map: aliased to relative './src/components/Loading' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:08:35.763] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:08:35.764] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:08:45.202] Server  ERROR    ⨯ ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+
+
+./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+
+[00:08:45.948] Browser ERROR   uncaughtError: Error: ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+
+
+[00:08:46.076] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:08:46.076] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:08:46.284] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:08:46.285] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:23.761] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:23.761] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:25.762] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:25.762] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:27.765] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:27.765] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:30.758] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:30.758] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:31.763] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:31.763] Browser ERROR   ./src/app/posts/page.tsx:8:1
+Export Loading doesn't exist in target module
+   6 | import toast from "react-hot-toast";
+   7 | import { useRouter } from "next/navigation";
+>  8 | import { Loading } from "@/components/Loading";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PostsPage() {
+  11 |   const [posts, setPosts] = useState<any[]>([]);
+
+The export Loading was not found in module [project]/src/components/Loading.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/posts/page.tsx [Client Component Browser]
+    ./src/app/posts/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/posts/page.tsx [Client Component SSR]
+    ./src/app/posts/page.tsx [Server Component]
+[00:09:37.936] Server  LOG      ✓ Compiled in 264ms
+[00:09:40.381] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:46.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:11.299] Server  LOG      ✓ Compiled in 237ms
+[00:10:16.942] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:20.416] Server  LOG      ✓ Compiled in 233ms
+[00:11:23.712] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:51.383] Server  LOG      ✓ Compiled in 201ms
+[00:11:59.634] Server  LOG      ✓ Compiled in 146ms

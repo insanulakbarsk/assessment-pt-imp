@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { Loading } from "@/components";
 
 export default function PostDetailPage() {
   const [post, setPost] = useState(null);
@@ -31,11 +32,7 @@ export default function PostDetailPage() {
   }, [params.id, router]);
 
   if (!post)
-    return (
-      <div className="flex min-h-screen items-center justify-center text-lg text-gray-600">
-        Loading...
-      </div>
-    );
+    return <Loading />;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-950 dark:to-black py-20 px-6 flex justify-center">

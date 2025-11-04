@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import toast from "react-hot-toast";
+import { Loading } from "@/components";
 
 export default function EditPostPage() {
   const [form, setForm] = useState({ title: "", isi: "" });
@@ -65,11 +66,8 @@ export default function EditPostPage() {
   };
 
   if (loading)
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-base-200">
-        <span className="loading loading-spinner loading-lg text-primary"></span>
-      </div>
-    );
+    return <Loading />;
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-base-200 px-4">

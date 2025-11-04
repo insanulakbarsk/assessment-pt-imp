@@ -118,7 +118,7 @@ function CreatePostPage() {
                                     type: "text",
                                     name: "title",
                                     placeholder: "Masukkan judul post...",
-                                    className: "input input-bordered w-full bg-white/80 dark:bg-gray-800/60 border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 transition-all",
+                                    className: "px-2 input input-bordered w-full bg-white/80 dark:bg-gray-800/60 border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 transition-all",
                                     onChange: handleChange,
                                     required: true
                                 }, void 0, false, {
@@ -146,7 +146,7 @@ function CreatePostPage() {
                                     name: "isi",
                                     rows: 5,
                                     placeholder: "Tulis isi postingan kamu...",
-                                    className: "textarea textarea-bordered w-full bg-white/80 dark:bg-gray-800/60 border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 transition-all",
+                                    className: "px-2 textarea textarea-bordered w-full bg-white/80 dark:bg-gray-800/60 border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 transition-all",
                                     onChange: handleChange,
                                     required: true
                                 }, void 0, false, {

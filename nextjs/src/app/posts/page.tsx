@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { Loading } from "@/components";
 
 export default function PostsPage() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -74,12 +75,7 @@ export default function PostsPage() {
   }, [page]);
 
   if (loading)
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <span className="loading loading-spinner text-primary w-10 h-10"></span>
-        <p className="mt-4 text-gray-500">Memuat data...</p>
-      </div>
-    );
+    return <Loading />;
 
   if (posts.length === 0)
     return (
